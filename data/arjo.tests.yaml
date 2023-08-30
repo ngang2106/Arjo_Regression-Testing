@@ -1,0 +1,39 @@
+hideSelectors:
+  - .CybotCookiebotDialogContentWrapper
+scenarios:
+  - url: https://www.arjo.com/int/
+  - url: https://www.arjo.com/int/products/
+  - url: https://www.arjo.com/int/products/patient-handling/
+  - url: https://www.arjo.com/int/products/patient-handling/#product-list-tab-1
+  - url: https://www.arjo.com/int/products/patient-handling/standing-and-raising-aid/sara-combilizer/
+  - url: https://www.arjo.com/int/services-solutions/healthcare-solutions/
+  - url: https://www.arjo.com/int/services-solutions/
+  - url: https://www.arjo.com/int/knowledge/
+  - url: https://www.arjo.com/int/knowledge/global-webinars/
+  - url: https://www.arjo.com/int/knowledge/arjo-blog/
+  - url: https://www.arjo.com/int/about-us/investors/
+  - url: https://www.arjo.com/int/about-us/investors/calendar2/2023/
+  - url: https://www.arjo.com/int/about-us/investors/reports--presentations/2023/
+  - url: https://www.arjo.com/int/about-us/investors/the-share/
+  - url: https://www.arjo.com/int/about-us/investors/fact-sheet2/
+  - url: https://www.arjo.com/int/about-us/investors/financial-data/
+  - url: https://www.arjo.com/int/about-us/investors/newsroom/
+  - url: https://www.arjo.com/int/about-us/investors/acquisitions-and-divestments/
+  - url: https://www.arjo.com/int/about-us/investors/annual-report-2022/
+  - url: https://www.arjo.com/int/about-us/sustainability/
+  - url: https://www.arjo.com/int/about-us/press-and-media/
+  - url: https://www.arjo.com/int/about-us/press-and-media/#product-tab-110825
+  - url: https://www.arjo.com/int/about-us/press-and-media/#product-tab-110831
+  - url: https://www.arjo.com/int/about-us/careers/
+  - url: https://www.arjo.com/int/contact-us/
+
+
+
+
+
+
+
+
+
+
+

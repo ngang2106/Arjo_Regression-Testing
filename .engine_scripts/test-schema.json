@@ -1,0 +1,401 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/TestSuite",
+  "definitions": {
+    "TestSuite": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "useCssOverride": {
+          "type": "boolean"
+        },
+        "env": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Env"
+          }
+        },
+        "cssOverridePath": {
+          "type": "string"
+        },
+        "hideSelectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "removeSelectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/URL"
+          }
+        },
+        "debug": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "scenarios"
+      ],
+      "title": "TestSuite"
+    },
+    "Env": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "test": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        }
+      },
+      "required": [
+        "ref",
+        "test"
+      ],
+      "title": "Env"
+    },
+    "URL": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "delay": {
+          "type": "number"
+        },
+        "useCssOverride": {
+          "type": "boolean"
+        },
+        "cssOverridePath": {
+          "type": "string"
+        },
+        "cookiePath": {
+          "type": "string"
+        },
+        "jsOnReadyPath": {
+          "type": "string"
+        },
+        "hideSelectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "removeSelectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "clickSelector": {
+          "type": "string"
+        },
+        "viewportNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "needs": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/definitions/CheckAction"
+              },
+              {
+                "$ref": "#/definitions/ClickAction"
+              },
+              {
+                "$ref": "#/definitions/HideAction"
+              },
+              {
+                "$ref": "#/definitions/HoverAction"
+              },
+              {
+                "$ref": "#/definitions/InputAction"
+              },
+              {
+                "$ref": "#/definitions/InputFileAction"
+              },
+              {
+                "$ref": "#/definitions/PressAction"
+              },
+              {
+                "$ref": "#/definitions/RemoveAction"
+              },
+              {
+                "$ref": "#/definitions/ScrollAction"
+              },
+              {
+                "$ref": "#/definitions/SelectByLabelAction"
+              },
+              {
+                "$ref": "#/definitions/SelectByValueAction"
+              },
+              {
+                "$ref": "#/definitions/UncheckAction"
+              },
+              {
+                "$ref": "#/definitions/WaitAction"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "URL"
+    },
+    "CheckAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "check": {
+          "type": "string"
+        }
+      }
+    },
+    "ClickAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "click": {
+          "type": "string"
+        }
+      }
+    },
+    "HideAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hide": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hide"
+      ]
+    },
+    "HoverAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hover": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hover"
+      ]
+    },
+    "InputAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "input": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "append": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "input",
+        "value"
+      ]
+    },
+    "InputFileAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "input": {
+          "type": "string"
+        },
+        "file": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "useFileChooser": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "input",
+        "file"
+      ]
+    },
+    "PressAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "press": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "press",
+        "key"
+      ]
+    },
+    "RemoveAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "remove": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "remove"
+      ]
+    },
+    "ScrollAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "scroll": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "scroll"
+      ]
+    },
+    "SelectByValueAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "select": {
+          "type": "string"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "select",
+        "value"
+      ]
+    },
+    "SelectByLabelAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "select": {
+          "type": "string"
+        },
+        "label": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "select",
+        "label"
+      ]
+    },
+    "UncheckAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uncheck": {
+          "type": "string"
+        }
+      }
+    },
+    "WaitAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wait": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "wait"
+      ]
+    }
+  }
+}
